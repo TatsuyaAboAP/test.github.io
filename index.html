@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>あなたのＨＰタイトル</title>
+    <title>データ送信テストページ</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
 </head>
@@ -13,22 +13,20 @@
         <header>
             <div id="header-container">
                 <div id="head-inner">
-                    <h1>テストページ</h1>
+                    <h1>データ送信テストページ</h1>
                 </div>
             </div>
         </header>
         <main>
-            <button type="button" onclick="TestSend()">データ送信テスト</button>
+            <button type="button" onclick="callAlarm()">アラームテスト</button>
         </main>
         <footer></footer>
         <script>
-            function TestSend() {
-                const result = window.uniwebview.call("updateScore", {
-                    score: 1500,
-                    level: 3,
-                    bonus: true,
+            function callAlarm() {
+                const result = window.uniwebview.call("call_alarm", {
+                    value:true,
                 });
-                console.log("Score updated:", result);
+                console.log("call alarm:", result);
             }
         </script>
     </div>
