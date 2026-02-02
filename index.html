@@ -18,8 +18,8 @@
             </div>
         </header>
         <main>
-            <button type="button" onclick="triggerAlart()">アラートテスト(AuctionTime)</button>
-            <!--button type="button" onclick="triggerAlart2()">アラートテスト(ApplicationDate)</button-->
+            <button type="button" onclick="triggerAlert()">アラートテスト(AuctionTime)</button>
+            <button type="button" onclick="triggerAlert2()">アラートテスト(ApplicationDate)</button>
         </main>
         <footer></footer>
         <script>
@@ -29,13 +29,12 @@
                 });
                 console.log("call alart:", result);
             }
-
-            // function triggerAlert2() {
-            //     const result = window.uniwebview.call("triggerAlert", {
-            //         type:1,
-            //     });
-            //     console.log("call alart:", result);
-            // }
+            function triggerAlert2() {
+                const result = window.uniwebview.call("triggerAlert", {
+                    type:1,
+                });
+                console.log("call alart:", result);
+            }
         </script>
     </div>
 </body>
