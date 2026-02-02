@@ -18,15 +18,23 @@
             </div>
         </header>
         <main>
-            <button type="button" onclick="callAlarm()">アラームテスト</button>
+            <button type="button" onclick="triggerAlart()">アラートテスト(AuctionTime)</button>
+            <button type="button" onclick="triggerAlart()">アラートテスト(ApplicationDate)</button>
         </main>
         <footer></footer>
         <script>
-            function callAlarm() {
-                const result = window.uniwebview.call("call_alarm", {
-                    value:true,
+            function triggerAlert() {
+                const result = window.uniwebview.call("triggerAlert", {
+                    type:0,
                 });
-                console.log("call alarm:", result);
+                console.log("call alart:", result);
+            }
+
+            function triggerAlert2() {
+                const result = window.uniwebview.call("triggerAlert", {
+                    type:1,
+                });
+                console.log("call alart:", result);
             }
         </script>
     </div>
