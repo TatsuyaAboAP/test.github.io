@@ -18,22 +18,52 @@
             </div>
         </header>
         <main>
-            <button type="button" onclick="triggerAlert()">アラートテスト(AuctionTime)</button>
-            <button type="button" onclick="triggerAlert2()">アラートテスト(ApplicationDate)</button>
+            <button type="button" onclick="sessionExpired()">sessionExpired</button>
+            <button type="button" onclick="openCall()">openCall(tel)</button>
+            <button type="button" onclick="openCall2()">openCall(facetime)</button>
+            <button type="button" onclick="openCall3()">openCall(zoom)</button>
+            <button type="button" onclick="triggerAlert()">アラート(AuctionTime)</button>
+            <button type="button" onclick="triggerAlert2()">アラート(ApplicationDate)</button>
         </main>
         <footer></footer>
         <script>
+            function sessionExpired() {
+                const result = window.uniwebview.call("sessionExpired", {
+                });
+                console.log("sessionExpired:", result);
+            }
+            function openCall() {
+                const result = window.uniwebview.call("openCall", {
+                    type:0,
+                    phoneNumber:117,
+                });
+                console.log("openCall:", result);
+            }
+            function openCall2() {
+                const result = window.uniwebview.call("openCall", {
+                    type:1,
+                    phoneNumber:117,
+                });
+                console.log("openCall:", result);
+            }
+            function openCall3() {
+                const result = window.uniwebview.call("openCall", {
+                    type:2,
+                    phoneNumber:117,
+                });
+                console.log("openCall:", result);
+            }
             function triggerAlert() {
                 const result = window.uniwebview.call("triggerAlert", {
                     type:0,
                 });
-                console.log("call alart:", result);
+                console.log("triggerAlert:", result);
             }
             function triggerAlert2() {
                 const result = window.uniwebview.call("triggerAlert", {
                     type:1,
                 });
-                console.log("call alart:", result);
+                console.log("triggerAlert:", result);
             }
         </script>
     </div>
